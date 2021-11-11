@@ -5,8 +5,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "40
 [; ;./H628A.h: 40: void digitalWrite(char pin,char value);
 [v _digitalWrite `(v ~T0 @X0 0 ef2`uc`uc ]
-"52
-[; ;./H628A.h: 52: void delay(unsigned int millis);
+"51
+[; ;./H628A.h: 51: void delay(unsigned int millis);
 [v _delay `(v ~T0 @X0 0 ef1`ui ]
 "12 ./H628A.h
 [p x FOSC = INTOSCIO ]

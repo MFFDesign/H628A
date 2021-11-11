@@ -12,7 +12,15 @@ int main(void)
 }
 void ConfiguracionInicial(void)
 {
-    
+    CCP1CON = 0x0C; //PWM Mode
+    //1. Set the PWM Period by writing the PR2 Register
+    PR2 = 0x64;
+    //2. Set the PWM Duty Cycle by Writing the CCPR1L and CCP1CON <5:4>
+    CCPR1L = 0x00;
+    //3. Make CCP1 pin as output by clearing TRISB bit 3.
+    //4. Set the TMR2 prescale Value and Enable timer 2
+    // by wrintign T2CON
+    T2CON = 0x07;
 }
 void pinMode(char pin, char dir)
 {
@@ -162,10 +170,11 @@ char digitalRead(char pin)
     }
 }
 
-void analogWrite(unsigned int value)
+void analogWrite(char value)
 {
-    
+    CCPR1L = value;
 }
+
 void SerialBegin(char BaudRate)
 {
 	BRGH = 1;

@@ -1019,8 +1019,7 @@ void loop(void);
 void pinMode(char pin, char dir);
 void digitalWrite(char pin,char value);
 char digitalRead(char pin);
-unsigned int analogRead(char pin);
-void analogWrite(unsigned int value);
+void analogWrite(char value);
 void SerialBegin(char BaudRate);
 void SerialWrite(char data);
 char SerialWriteText(char *dataText);
@@ -1045,7 +1044,15 @@ int main(void)
 }
 void ConfiguracionInicial(void)
 {
+    CCP1CON = 0x0C;
 
+    PR2 = 0x64;
+
+    CCPR1L = 0x00;
+
+
+
+    T2CON = 0x07;
 }
 void pinMode(char pin, char dir)
 {
@@ -1195,10 +1202,11 @@ char digitalRead(char pin)
     }
 }
 
-void analogWrite(unsigned int value)
+void analogWrite(char value)
 {
-
+    CCPR1L = value;
 }
+
 void SerialBegin(char BaudRate)
 {
  BRGH = 1;

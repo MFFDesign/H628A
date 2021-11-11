@@ -9,7 +9,19 @@ Version 4.0 HI-TECH Software Intermediate Code
 "38
 [; ;./H628A.h: 38: void loop(void);
 [v _loop `(v ~T0 @X0 0 ef ]
-"913 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f628a.h
+"624 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f628a.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f628a.h: 624: extern volatile unsigned char CCP1CON __attribute__((address(0x017)));
+[v _CCP1CON `Vuc ~T0 @X0 0 e@23 ]
+"1137
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f628a.h: 1137: extern volatile unsigned char PR2 __attribute__((address(0x092)));
+[v _PR2 `Vuc ~T0 @X0 0 e@146 ]
+"610
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f628a.h: 610: extern volatile unsigned char CCPR1L __attribute__((address(0x015)));
+[v _CCPR1L `Vuc ~T0 @X0 0 e@21 ]
+"532
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f628a.h: 532: extern volatile unsigned char T2CON __attribute__((address(0x012)));
+[v _T2CON `Vuc ~T0 @X0 0 e@18 ]
+"913
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f628a.h: 913:     struct {
 [s S35 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S35 . TRISA0 TRISA1 TRISA2 TRISA3 TRISA4 TRISA5 TRISA6 TRISA7 ]
@@ -266,158 +278,170 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 [e :U _ConfiguracionInicial ]
 [f ]
-"16
-[; ;H628A.c: 16: }
+"15
+[; ;H628A.c: 15:     CCP1CON = 0x0C;
+[e = _CCP1CON -> -> 12 `i `uc ]
+"17
+[; ;H628A.c: 17:     PR2 = 0x64;
+[e = _PR2 -> -> 100 `i `uc ]
+"19
+[; ;H628A.c: 19:     CCPR1L = 0x00;
+[e = _CCPR1L -> -> 0 `i `uc ]
+"23
+[; ;H628A.c: 23:     T2CON = 0x07;
+[e = _T2CON -> -> 7 `i `uc ]
+"24
+[; ;H628A.c: 24: }
 [e :UE 55 ]
 }
-"17
-[; ;H628A.c: 17: void pinMode(char pin, char dir)
+"25
+[; ;H628A.c: 25: void pinMode(char pin, char dir)
 [v _pinMode `(v ~T0 @X0 1 ef2`uc`uc ]
-"18
-[; ;H628A.c: 18: {
+"26
+[; ;H628A.c: 26: {
 {
 [e :U _pinMode ]
-"17
-[; ;H628A.c: 17: void pinMode(char pin, char dir)
+"25
+[; ;H628A.c: 25: void pinMode(char pin, char dir)
 [v _pin `uc ~T0 @X0 1 r1 ]
 [v _dir `uc ~T0 @X0 1 r2 ]
-"18
-[; ;H628A.c: 18: {
-[f ]
-"19
-[; ;H628A.c: 19:     switch(pin)
-[e $U 58  ]
-"20
-[; ;H628A.c: 20:     {
-{
-"21
-[; ;H628A.c: 21:         case 0:
-[e :U 59 ]
-"22
-[; ;H628A.c: 22:             TRISAbits.TRISA0 = dir;
-[e = . . _TRISAbits 0 0 -> _dir `uc ]
-"23
-[; ;H628A.c: 23:             break;
-[e $U 57  ]
-"24
-[; ;H628A.c: 24:         case 1:
-[e :U 60 ]
-"25
-[; ;H628A.c: 25:             TRISAbits.TRISA1 = dir;
-[e = . . _TRISAbits 0 1 -> _dir `uc ]
 "26
-[; ;H628A.c: 26:             break;
-[e $U 57  ]
+[; ;H628A.c: 26: {
+[f ]
 "27
-[; ;H628A.c: 27:         case 2:
-[e :U 61 ]
+[; ;H628A.c: 27:     switch(pin)
+[e $U 58  ]
 "28
-[; ;H628A.c: 28:             TRISAbits.TRISA2 = dir;
-[e = . . _TRISAbits 0 2 -> _dir `uc ]
+[; ;H628A.c: 28:     {
+{
 "29
-[; ;H628A.c: 29:             break;
-[e $U 57  ]
+[; ;H628A.c: 29:         case 0:
+[e :U 59 ]
 "30
-[; ;H628A.c: 30:         case 3:
-[e :U 62 ]
+[; ;H628A.c: 30:             TRISAbits.TRISA0 = dir;
+[e = . . _TRISAbits 0 0 -> _dir `uc ]
 "31
-[; ;H628A.c: 31:             TRISAbits.TRISA3 = dir;
-[e = . . _TRISAbits 0 3 -> _dir `uc ]
+[; ;H628A.c: 31:             break;
+[e $U 57  ]
 "32
-[; ;H628A.c: 32:             break;
-[e $U 57  ]
+[; ;H628A.c: 32:         case 1:
+[e :U 60 ]
 "33
-[; ;H628A.c: 33:         case 4:
-[e :U 63 ]
+[; ;H628A.c: 33:             TRISAbits.TRISA1 = dir;
+[e = . . _TRISAbits 0 1 -> _dir `uc ]
 "34
-[; ;H628A.c: 34:             TRISAbits.TRISA6 = dir;
-[e = . . _TRISAbits 0 6 -> _dir `uc ]
+[; ;H628A.c: 34:             break;
+[e $U 57  ]
 "35
-[; ;H628A.c: 35:             break;
-[e $U 57  ]
+[; ;H628A.c: 35:         case 2:
+[e :U 61 ]
 "36
-[; ;H628A.c: 36:         case 5:
-[e :U 64 ]
+[; ;H628A.c: 36:             TRISAbits.TRISA2 = dir;
+[e = . . _TRISAbits 0 2 -> _dir `uc ]
 "37
-[; ;H628A.c: 37:             TRISAbits.TRISA7 = dir;
-[e = . . _TRISAbits 0 7 -> _dir `uc ]
+[; ;H628A.c: 37:             break;
+[e $U 57  ]
 "38
-[; ;H628A.c: 38:             break;
-[e $U 57  ]
+[; ;H628A.c: 38:         case 3:
+[e :U 62 ]
 "39
-[; ;H628A.c: 39:         case 6:
-[e :U 65 ]
+[; ;H628A.c: 39:             TRISAbits.TRISA3 = dir;
+[e = . . _TRISAbits 0 3 -> _dir `uc ]
 "40
-[; ;H628A.c: 40:             TRISBbits.TRISB0 = dir;
-[e = . . _TRISBbits 0 0 -> _dir `uc ]
+[; ;H628A.c: 40:             break;
+[e $U 57  ]
 "41
-[; ;H628A.c: 41:             break;
-[e $U 57  ]
+[; ;H628A.c: 41:         case 4:
+[e :U 63 ]
 "42
-[; ;H628A.c: 42:         case 7:
-[e :U 66 ]
+[; ;H628A.c: 42:             TRISAbits.TRISA6 = dir;
+[e = . . _TRISAbits 0 6 -> _dir `uc ]
 "43
-[; ;H628A.c: 43:             TRISBbits.TRISB1 = dir;
-[e = . . _TRISBbits 0 1 -> _dir `uc ]
+[; ;H628A.c: 43:             break;
+[e $U 57  ]
 "44
-[; ;H628A.c: 44:             break;
-[e $U 57  ]
+[; ;H628A.c: 44:         case 5:
+[e :U 64 ]
 "45
-[; ;H628A.c: 45:         case 8:
-[e :U 67 ]
+[; ;H628A.c: 45:             TRISAbits.TRISA7 = dir;
+[e = . . _TRISAbits 0 7 -> _dir `uc ]
 "46
-[; ;H628A.c: 46:             TRISBbits.TRISB2 = dir;
-[e = . . _TRISBbits 0 2 -> _dir `uc ]
+[; ;H628A.c: 46:             break;
+[e $U 57  ]
 "47
-[; ;H628A.c: 47:             break;
-[e $U 57  ]
+[; ;H628A.c: 47:         case 6:
+[e :U 65 ]
 "48
-[; ;H628A.c: 48:         case 9:
-[e :U 68 ]
+[; ;H628A.c: 48:             TRISBbits.TRISB0 = dir;
+[e = . . _TRISBbits 0 0 -> _dir `uc ]
 "49
-[; ;H628A.c: 49:             TRISBbits.TRISB3 = dir;
-[e = . . _TRISBbits 0 3 -> _dir `uc ]
+[; ;H628A.c: 49:             break;
+[e $U 57  ]
 "50
-[; ;H628A.c: 50:             break;
-[e $U 57  ]
+[; ;H628A.c: 50:         case 7:
+[e :U 66 ]
 "51
-[; ;H628A.c: 51:         case 10:
-[e :U 69 ]
+[; ;H628A.c: 51:             TRISBbits.TRISB1 = dir;
+[e = . . _TRISBbits 0 1 -> _dir `uc ]
 "52
-[; ;H628A.c: 52:             TRISBbits.TRISB4 = dir;
-[e = . . _TRISBbits 0 4 -> _dir `uc ]
+[; ;H628A.c: 52:             break;
+[e $U 57  ]
 "53
-[; ;H628A.c: 53:             break;
-[e $U 57  ]
+[; ;H628A.c: 53:         case 8:
+[e :U 67 ]
 "54
-[; ;H628A.c: 54:         case 11:
-[e :U 70 ]
+[; ;H628A.c: 54:             TRISBbits.TRISB2 = dir;
+[e = . . _TRISBbits 0 2 -> _dir `uc ]
 "55
-[; ;H628A.c: 55:             TRISBbits.TRISB5 = dir;
-[e = . . _TRISBbits 0 5 -> _dir `uc ]
+[; ;H628A.c: 55:             break;
+[e $U 57  ]
 "56
-[; ;H628A.c: 56:             break;
-[e $U 57  ]
+[; ;H628A.c: 56:         case 9:
+[e :U 68 ]
 "57
-[; ;H628A.c: 57:         case 12:
-[e :U 71 ]
+[; ;H628A.c: 57:             TRISBbits.TRISB3 = dir;
+[e = . . _TRISBbits 0 3 -> _dir `uc ]
 "58
-[; ;H628A.c: 58:             TRISBbits.TRISB6 = dir;
-[e = . . _TRISBbits 0 6 -> _dir `uc ]
+[; ;H628A.c: 58:             break;
+[e $U 57  ]
 "59
-[; ;H628A.c: 59:             break;
-[e $U 57  ]
+[; ;H628A.c: 59:         case 10:
+[e :U 69 ]
 "60
-[; ;H628A.c: 60:         case 13:
-[e :U 72 ]
+[; ;H628A.c: 60:             TRISBbits.TRISB4 = dir;
+[e = . . _TRISBbits 0 4 -> _dir `uc ]
 "61
-[; ;H628A.c: 61:             TRISBbits.TRISB7 = dir;
-[e = . . _TRISBbits 0 7 -> _dir `uc ]
-"62
-[; ;H628A.c: 62:             break;
+[; ;H628A.c: 61:             break;
 [e $U 57  ]
+"62
+[; ;H628A.c: 62:         case 11:
+[e :U 70 ]
+"63
+[; ;H628A.c: 63:             TRISBbits.TRISB5 = dir;
+[e = . . _TRISBbits 0 5 -> _dir `uc ]
 "64
-[; ;H628A.c: 64:     }
+[; ;H628A.c: 64:             break;
+[e $U 57  ]
+"65
+[; ;H628A.c: 65:         case 12:
+[e :U 71 ]
+"66
+[; ;H628A.c: 66:             TRISBbits.TRISB6 = dir;
+[e = . . _TRISBbits 0 6 -> _dir `uc ]
+"67
+[; ;H628A.c: 67:             break;
+[e $U 57  ]
+"68
+[; ;H628A.c: 68:         case 13:
+[e :U 72 ]
+"69
+[; ;H628A.c: 69:             TRISBbits.TRISB7 = dir;
+[e = . . _TRISBbits 0 7 -> _dir `uc ]
+"70
+[; ;H628A.c: 70:             break;
+[e $U 57  ]
+"72
+[; ;H628A.c: 72:     }
 }
 [e $U 57  ]
 [e :U 58 ]
@@ -437,158 +461,158 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ -> 13 `i 72
  57 ]
 [e :U 57 ]
-"65
-[; ;H628A.c: 65: }
+"73
+[; ;H628A.c: 73: }
 [e :UE 56 ]
 }
-"66
-[; ;H628A.c: 66: void digitalWrite(char pin,char value)
+"74
+[; ;H628A.c: 74: void digitalWrite(char pin,char value)
 [v _digitalWrite `(v ~T0 @X0 1 ef2`uc`uc ]
-"67
-[; ;H628A.c: 67: {
+"75
+[; ;H628A.c: 75: {
 {
 [e :U _digitalWrite ]
-"66
-[; ;H628A.c: 66: void digitalWrite(char pin,char value)
+"74
+[; ;H628A.c: 74: void digitalWrite(char pin,char value)
 [v _pin `uc ~T0 @X0 1 r1 ]
 [v _value `uc ~T0 @X0 1 r2 ]
-"67
-[; ;H628A.c: 67: {
-[f ]
-"68
-[; ;H628A.c: 68:     switch(pin)
-[e $U 75  ]
-"69
-[; ;H628A.c: 69:     {
-{
-"70
-[; ;H628A.c: 70:         case 0:
-[e :U 76 ]
-"71
-[; ;H628A.c: 71:             PORTAbits.RA0 = value;
-[e = . . _PORTAbits 0 0 -> _value `uc ]
-"72
-[; ;H628A.c: 72:             break;
-[e $U 74  ]
-"73
-[; ;H628A.c: 73:         case 1:
-[e :U 77 ]
-"74
-[; ;H628A.c: 74:             PORTAbits.RA1 = value;
-[e = . . _PORTAbits 0 1 -> _value `uc ]
 "75
-[; ;H628A.c: 75:             break;
-[e $U 74  ]
+[; ;H628A.c: 75: {
+[f ]
 "76
-[; ;H628A.c: 76:         case 2:
-[e :U 78 ]
+[; ;H628A.c: 76:     switch(pin)
+[e $U 75  ]
 "77
-[; ;H628A.c: 77:             PORTAbits.RA2 = value;
-[e = . . _PORTAbits 0 2 -> _value `uc ]
+[; ;H628A.c: 77:     {
+{
 "78
-[; ;H628A.c: 78:             break;
-[e $U 74  ]
+[; ;H628A.c: 78:         case 0:
+[e :U 76 ]
 "79
-[; ;H628A.c: 79:         case 3:
-[e :U 79 ]
+[; ;H628A.c: 79:             PORTAbits.RA0 = value;
+[e = . . _PORTAbits 0 0 -> _value `uc ]
 "80
-[; ;H628A.c: 80:             PORTAbits.RA3 = value;
-[e = . . _PORTAbits 0 3 -> _value `uc ]
+[; ;H628A.c: 80:             break;
+[e $U 74  ]
 "81
-[; ;H628A.c: 81:             break;
-[e $U 74  ]
+[; ;H628A.c: 81:         case 1:
+[e :U 77 ]
 "82
-[; ;H628A.c: 82:         case 4:
-[e :U 80 ]
+[; ;H628A.c: 82:             PORTAbits.RA1 = value;
+[e = . . _PORTAbits 0 1 -> _value `uc ]
 "83
-[; ;H628A.c: 83:             PORTAbits.RA6 = value;
-[e = . . _PORTAbits 0 6 -> _value `uc ]
+[; ;H628A.c: 83:             break;
+[e $U 74  ]
 "84
-[; ;H628A.c: 84:             break;
-[e $U 74  ]
+[; ;H628A.c: 84:         case 2:
+[e :U 78 ]
 "85
-[; ;H628A.c: 85:         case 5:
-[e :U 81 ]
+[; ;H628A.c: 85:             PORTAbits.RA2 = value;
+[e = . . _PORTAbits 0 2 -> _value `uc ]
 "86
-[; ;H628A.c: 86:             PORTAbits.RA7 = value;
-[e = . . _PORTAbits 0 7 -> _value `uc ]
+[; ;H628A.c: 86:             break;
+[e $U 74  ]
 "87
-[; ;H628A.c: 87:             break;
-[e $U 74  ]
+[; ;H628A.c: 87:         case 3:
+[e :U 79 ]
 "88
-[; ;H628A.c: 88:         case 6:
-[e :U 82 ]
+[; ;H628A.c: 88:             PORTAbits.RA3 = value;
+[e = . . _PORTAbits 0 3 -> _value `uc ]
 "89
-[; ;H628A.c: 89:             PORTBbits.RB0 = value;
-[e = . . _PORTBbits 0 0 -> _value `uc ]
+[; ;H628A.c: 89:             break;
+[e $U 74  ]
 "90
-[; ;H628A.c: 90:             break;
-[e $U 74  ]
+[; ;H628A.c: 90:         case 4:
+[e :U 80 ]
 "91
-[; ;H628A.c: 91:         case 7:
-[e :U 83 ]
+[; ;H628A.c: 91:             PORTAbits.RA6 = value;
+[e = . . _PORTAbits 0 6 -> _value `uc ]
 "92
-[; ;H628A.c: 92:             PORTBbits.RB1 = value;
-[e = . . _PORTBbits 0 1 -> _value `uc ]
+[; ;H628A.c: 92:             break;
+[e $U 74  ]
 "93
-[; ;H628A.c: 93:             break;
-[e $U 74  ]
+[; ;H628A.c: 93:         case 5:
+[e :U 81 ]
 "94
-[; ;H628A.c: 94:         case 8:
-[e :U 84 ]
+[; ;H628A.c: 94:             PORTAbits.RA7 = value;
+[e = . . _PORTAbits 0 7 -> _value `uc ]
 "95
-[; ;H628A.c: 95:             PORTBbits.RB2 = value;
-[e = . . _PORTBbits 0 2 -> _value `uc ]
+[; ;H628A.c: 95:             break;
+[e $U 74  ]
 "96
-[; ;H628A.c: 96:             break;
-[e $U 74  ]
+[; ;H628A.c: 96:         case 6:
+[e :U 82 ]
 "97
-[; ;H628A.c: 97:         case 9:
-[e :U 85 ]
+[; ;H628A.c: 97:             PORTBbits.RB0 = value;
+[e = . . _PORTBbits 0 0 -> _value `uc ]
 "98
-[; ;H628A.c: 98:             PORTBbits.RB3 = value;
-[e = . . _PORTBbits 0 3 -> _value `uc ]
+[; ;H628A.c: 98:             break;
+[e $U 74  ]
 "99
-[; ;H628A.c: 99:             break;
-[e $U 74  ]
+[; ;H628A.c: 99:         case 7:
+[e :U 83 ]
 "100
-[; ;H628A.c: 100:         case 10:
-[e :U 86 ]
+[; ;H628A.c: 100:             PORTBbits.RB1 = value;
+[e = . . _PORTBbits 0 1 -> _value `uc ]
 "101
-[; ;H628A.c: 101:             PORTBbits.RB4 = value;
-[e = . . _PORTBbits 0 4 -> _value `uc ]
+[; ;H628A.c: 101:             break;
+[e $U 74  ]
 "102
-[; ;H628A.c: 102:             break;
-[e $U 74  ]
+[; ;H628A.c: 102:         case 8:
+[e :U 84 ]
 "103
-[; ;H628A.c: 103:         case 11:
-[e :U 87 ]
+[; ;H628A.c: 103:             PORTBbits.RB2 = value;
+[e = . . _PORTBbits 0 2 -> _value `uc ]
 "104
-[; ;H628A.c: 104:             PORTBbits.RB5 = value;
-[e = . . _PORTBbits 0 5 -> _value `uc ]
+[; ;H628A.c: 104:             break;
+[e $U 74  ]
 "105
-[; ;H628A.c: 105:             break;
-[e $U 74  ]
+[; ;H628A.c: 105:         case 9:
+[e :U 85 ]
 "106
-[; ;H628A.c: 106:         case 12:
-[e :U 88 ]
+[; ;H628A.c: 106:             PORTBbits.RB3 = value;
+[e = . . _PORTBbits 0 3 -> _value `uc ]
 "107
-[; ;H628A.c: 107:             PORTBbits.RB6 = value;
-[e = . . _PORTBbits 0 6 -> _value `uc ]
+[; ;H628A.c: 107:             break;
+[e $U 74  ]
 "108
-[; ;H628A.c: 108:             break;
-[e $U 74  ]
+[; ;H628A.c: 108:         case 10:
+[e :U 86 ]
 "109
-[; ;H628A.c: 109:         case 13:
-[e :U 89 ]
+[; ;H628A.c: 109:             PORTBbits.RB4 = value;
+[e = . . _PORTBbits 0 4 -> _value `uc ]
 "110
-[; ;H628A.c: 110:             PORTBbits.RB7 = value;
-[e = . . _PORTBbits 0 7 -> _value `uc ]
-"111
-[; ;H628A.c: 111:             break;
+[; ;H628A.c: 110:             break;
 [e $U 74  ]
+"111
+[; ;H628A.c: 111:         case 11:
+[e :U 87 ]
+"112
+[; ;H628A.c: 112:             PORTBbits.RB5 = value;
+[e = . . _PORTBbits 0 5 -> _value `uc ]
 "113
-[; ;H628A.c: 113:     }
+[; ;H628A.c: 113:             break;
+[e $U 74  ]
+"114
+[; ;H628A.c: 114:         case 12:
+[e :U 88 ]
+"115
+[; ;H628A.c: 115:             PORTBbits.RB6 = value;
+[e = . . _PORTBbits 0 6 -> _value `uc ]
+"116
+[; ;H628A.c: 116:             break;
+[e $U 74  ]
+"117
+[; ;H628A.c: 117:         case 13:
+[e :U 89 ]
+"118
+[; ;H628A.c: 118:             PORTBbits.RB7 = value;
+[e = . . _PORTBbits 0 7 -> _value `uc ]
+"119
+[; ;H628A.c: 119:             break;
+[e $U 74  ]
+"121
+[; ;H628A.c: 121:     }
 }
 [e $U 74  ]
 [e :U 75 ]
@@ -608,171 +632,171 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ -> 13 `i 89
  74 ]
 [e :U 74 ]
-"114
-[; ;H628A.c: 114: }
+"122
+[; ;H628A.c: 122: }
 [e :UE 73 ]
 }
-"115
-[; ;H628A.c: 115: char digitalRead(char pin)
+"123
+[; ;H628A.c: 123: char digitalRead(char pin)
 [v _digitalRead `(uc ~T0 @X0 1 ef1`uc ]
-"116
-[; ;H628A.c: 116: {
+"124
+[; ;H628A.c: 124: {
 {
 [e :U _digitalRead ]
-"115
-[; ;H628A.c: 115: char digitalRead(char pin)
+"123
+[; ;H628A.c: 123: char digitalRead(char pin)
 [v _pin `uc ~T0 @X0 1 r1 ]
-"116
-[; ;H628A.c: 116: {
+"124
+[; ;H628A.c: 124: {
 [f ]
-"117
-[; ;H628A.c: 117:     switch(pin)
+"125
+[; ;H628A.c: 125:     switch(pin)
 [e $U 92  ]
-"118
-[; ;H628A.c: 118:     {
+"126
+[; ;H628A.c: 126:     {
 {
-"119
-[; ;H628A.c: 119:         case 0:
+"127
+[; ;H628A.c: 127:         case 0:
 [e :U 93 ]
-"120
-[; ;H628A.c: 120:             return PORTAbits.RA0;
+"128
+[; ;H628A.c: 128:             return PORTAbits.RA0;
 [e ) -> . . _PORTAbits 0 0 `uc ]
 [e $UE 90  ]
-"121
-[; ;H628A.c: 121:             break;
+"129
+[; ;H628A.c: 129:             break;
 [e $U 91  ]
-"122
-[; ;H628A.c: 122:         case 1:
+"130
+[; ;H628A.c: 130:         case 1:
 [e :U 94 ]
-"123
-[; ;H628A.c: 123:             return PORTAbits.RA1;
+"131
+[; ;H628A.c: 131:             return PORTAbits.RA1;
 [e ) -> . . _PORTAbits 0 1 `uc ]
 [e $UE 90  ]
-"124
-[; ;H628A.c: 124:             break;
+"132
+[; ;H628A.c: 132:             break;
 [e $U 91  ]
-"125
-[; ;H628A.c: 125:         case 2:
+"133
+[; ;H628A.c: 133:         case 2:
 [e :U 95 ]
-"126
-[; ;H628A.c: 126:             return PORTAbits.RA2;
+"134
+[; ;H628A.c: 134:             return PORTAbits.RA2;
 [e ) -> . . _PORTAbits 0 2 `uc ]
 [e $UE 90  ]
-"127
-[; ;H628A.c: 127:             break;
+"135
+[; ;H628A.c: 135:             break;
 [e $U 91  ]
-"128
-[; ;H628A.c: 128:         case 3:
+"136
+[; ;H628A.c: 136:         case 3:
 [e :U 96 ]
-"129
-[; ;H628A.c: 129:             return PORTAbits.RA3;
+"137
+[; ;H628A.c: 137:             return PORTAbits.RA3;
 [e ) -> . . _PORTAbits 0 3 `uc ]
 [e $UE 90  ]
-"130
-[; ;H628A.c: 130:             break;
+"138
+[; ;H628A.c: 138:             break;
 [e $U 91  ]
-"131
-[; ;H628A.c: 131:         case 4:
+"139
+[; ;H628A.c: 139:         case 4:
 [e :U 97 ]
-"132
-[; ;H628A.c: 132:             return PORTAbits.RA6;
+"140
+[; ;H628A.c: 140:             return PORTAbits.RA6;
 [e ) -> . . _PORTAbits 0 6 `uc ]
 [e $UE 90  ]
-"133
-[; ;H628A.c: 133:             break;
+"141
+[; ;H628A.c: 141:             break;
 [e $U 91  ]
-"134
-[; ;H628A.c: 134:         case 5:
+"142
+[; ;H628A.c: 142:         case 5:
 [e :U 98 ]
-"135
-[; ;H628A.c: 135:             return PORTAbits.RA7;
+"143
+[; ;H628A.c: 143:             return PORTAbits.RA7;
 [e ) -> . . _PORTAbits 0 7 `uc ]
 [e $UE 90  ]
-"136
-[; ;H628A.c: 136:             break;
+"144
+[; ;H628A.c: 144:             break;
 [e $U 91  ]
-"137
-[; ;H628A.c: 137:         case 6:
+"145
+[; ;H628A.c: 145:         case 6:
 [e :U 99 ]
-"138
-[; ;H628A.c: 138:             return PORTBbits.RB0;
+"146
+[; ;H628A.c: 146:             return PORTBbits.RB0;
 [e ) -> . . _PORTBbits 0 0 `uc ]
 [e $UE 90  ]
-"139
-[; ;H628A.c: 139:             break;
+"147
+[; ;H628A.c: 147:             break;
 [e $U 91  ]
-"140
-[; ;H628A.c: 140:         case 7:
+"148
+[; ;H628A.c: 148:         case 7:
 [e :U 100 ]
-"141
-[; ;H628A.c: 141:             return PORTBbits.RB1;
+"149
+[; ;H628A.c: 149:             return PORTBbits.RB1;
 [e ) -> . . _PORTBbits 0 1 `uc ]
 [e $UE 90  ]
-"142
-[; ;H628A.c: 142:             break;
+"150
+[; ;H628A.c: 150:             break;
 [e $U 91  ]
-"143
-[; ;H628A.c: 143:         case 8:
+"151
+[; ;H628A.c: 151:         case 8:
 [e :U 101 ]
-"144
-[; ;H628A.c: 144:             return PORTBbits.RB2;
+"152
+[; ;H628A.c: 152:             return PORTBbits.RB2;
 [e ) -> . . _PORTBbits 0 2 `uc ]
 [e $UE 90  ]
-"145
-[; ;H628A.c: 145:             break;
+"153
+[; ;H628A.c: 153:             break;
 [e $U 91  ]
-"146
-[; ;H628A.c: 146:         case 9:
+"154
+[; ;H628A.c: 154:         case 9:
 [e :U 102 ]
-"147
-[; ;H628A.c: 147:             return PORTBbits.RB3;
+"155
+[; ;H628A.c: 155:             return PORTBbits.RB3;
 [e ) -> . . _PORTBbits 0 3 `uc ]
 [e $UE 90  ]
-"148
-[; ;H628A.c: 148:             break;
+"156
+[; ;H628A.c: 156:             break;
 [e $U 91  ]
-"149
-[; ;H628A.c: 149:         case 10:
+"157
+[; ;H628A.c: 157:         case 10:
 [e :U 103 ]
-"150
-[; ;H628A.c: 150:             return PORTBbits.RB4;
+"158
+[; ;H628A.c: 158:             return PORTBbits.RB4;
 [e ) -> . . _PORTBbits 0 4 `uc ]
 [e $UE 90  ]
-"151
-[; ;H628A.c: 151:             break;
+"159
+[; ;H628A.c: 159:             break;
 [e $U 91  ]
-"152
-[; ;H628A.c: 152:         case 11:
+"160
+[; ;H628A.c: 160:         case 11:
 [e :U 104 ]
-"153
-[; ;H628A.c: 153:             return PORTBbits.RB5;
+"161
+[; ;H628A.c: 161:             return PORTBbits.RB5;
 [e ) -> . . _PORTBbits 0 5 `uc ]
 [e $UE 90  ]
-"154
-[; ;H628A.c: 154:             break;
+"162
+[; ;H628A.c: 162:             break;
 [e $U 91  ]
-"155
-[; ;H628A.c: 155:         case 12:
+"163
+[; ;H628A.c: 163:         case 12:
 [e :U 105 ]
-"156
-[; ;H628A.c: 156:             return PORTBbits.RB6;
+"164
+[; ;H628A.c: 164:             return PORTBbits.RB6;
 [e ) -> . . _PORTBbits 0 6 `uc ]
 [e $UE 90  ]
-"157
-[; ;H628A.c: 157:             break;
+"165
+[; ;H628A.c: 165:             break;
 [e $U 91  ]
-"158
-[; ;H628A.c: 158:         case 13:
+"166
+[; ;H628A.c: 166:         case 13:
 [e :U 106 ]
-"159
-[; ;H628A.c: 159:             return PORTBbits.RB7;
+"167
+[; ;H628A.c: 167:             return PORTBbits.RB7;
 [e ) -> . . _PORTBbits 0 7 `uc ]
 [e $UE 90  ]
-"160
-[; ;H628A.c: 160:             break;
+"168
+[; ;H628A.c: 168:             break;
 [e $U 91  ]
-"162
-[; ;H628A.c: 162:     }
+"170
+[; ;H628A.c: 170:     }
 }
 [e $U 91  ]
 [e :U 92 ]
@@ -792,129 +816,132 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ -> 13 `i 106
  91 ]
 [e :U 91 ]
-"163
-[; ;H628A.c: 163: }
+"171
+[; ;H628A.c: 171: }
 [e :UE 90 ]
 }
-"165
-[; ;H628A.c: 165: void analogWrite(unsigned int value)
-[v _analogWrite `(v ~T0 @X0 1 ef1`ui ]
-"166
-[; ;H628A.c: 166: {
+"173
+[; ;H628A.c: 173: void analogWrite(char value)
+[v _analogWrite `(v ~T0 @X0 1 ef1`uc ]
+"174
+[; ;H628A.c: 174: {
 {
 [e :U _analogWrite ]
-"165
-[; ;H628A.c: 165: void analogWrite(unsigned int value)
-[v _value `ui ~T0 @X0 1 r1 ]
-"166
-[; ;H628A.c: 166: {
+"173
+[; ;H628A.c: 173: void analogWrite(char value)
+[v _value `uc ~T0 @X0 1 r1 ]
+"174
+[; ;H628A.c: 174: {
 [f ]
-"168
-[; ;H628A.c: 168: }
+"175
+[; ;H628A.c: 175:     CCPR1L = value;
+[e = _CCPR1L -> _value `uc ]
+"176
+[; ;H628A.c: 176: }
 [e :UE 107 ]
 }
-"169
-[; ;H628A.c: 169: void SerialBegin(char BaudRate)
+"178
+[; ;H628A.c: 178: void SerialBegin(char BaudRate)
 [v _SerialBegin `(v ~T0 @X0 1 ef1`uc ]
-"170
-[; ;H628A.c: 170: {
+"179
+[; ;H628A.c: 179: {
 {
 [e :U _SerialBegin ]
-"169
-[; ;H628A.c: 169: void SerialBegin(char BaudRate)
-[v _BaudRate `uc ~T0 @X0 1 r1 ]
-"170
-[; ;H628A.c: 170: {
-[f ]
-"171
-[; ;H628A.c: 171:  BRGH = 1;
-[e = _BRGH -> -> 1 `i `b ]
-"172
-[; ;H628A.c: 172:     SYNC = 0;
-[e = _SYNC -> -> 0 `i `b ]
-"173
-[; ;H628A.c: 173:     TRISB2 = 1;
-[e = _TRISB2 -> -> 1 `i `b ]
-"174
-[; ;H628A.c: 174:     TRISB1 = 1;
-[e = _TRISB1 -> -> 1 `i `b ]
-"175
-[; ;H628A.c: 175:     SPEN = 1;
-[e = _SPEN -> -> 1 `i `b ]
-"176
-[; ;H628A.c: 176:     CREN = 1;
-[e = _CREN -> -> 1 `i `b ]
-"177
-[; ;H628A.c: 177:     TXEN = 1;
-[e = _TXEN -> -> 1 `i `b ]
 "178
-[; ;H628A.c: 178:     TXREG = 0x00;
-[e = _TXREG -> -> 0 `i `uc ]
+[; ;H628A.c: 178: void SerialBegin(char BaudRate)
+[v _BaudRate `uc ~T0 @X0 1 r1 ]
 "179
-[; ;H628A.c: 179:     RCREG = 0x00;
-[e = _RCREG -> -> 0 `i `uc ]
+[; ;H628A.c: 179: {
+[f ]
 "180
-[; ;H628A.c: 180:     switch(BaudRate)
-[e $U 110  ]
+[; ;H628A.c: 180:  BRGH = 1;
+[e = _BRGH -> -> 1 `i `b ]
 "181
-[; ;H628A.c: 181:     {
-{
+[; ;H628A.c: 181:     SYNC = 0;
+[e = _SYNC -> -> 0 `i `b ]
 "182
-[; ;H628A.c: 182:         case 207:
-[e :U 111 ]
+[; ;H628A.c: 182:     TRISB2 = 1;
+[e = _TRISB2 -> -> 1 `i `b ]
 "183
-[; ;H628A.c: 183:             SPBRG = 207;
-[e = _SPBRG -> -> 207 `i `uc ]
+[; ;H628A.c: 183:     TRISB1 = 1;
+[e = _TRISB1 -> -> 1 `i `b ]
 "184
-[; ;H628A.c: 184:             break;
-[e $U 109  ]
+[; ;H628A.c: 184:     SPEN = 1;
+[e = _SPEN -> -> 1 `i `b ]
 "185
-[; ;H628A.c: 185:         case 51:
-[e :U 112 ]
+[; ;H628A.c: 185:     CREN = 1;
+[e = _CREN -> -> 1 `i `b ]
 "186
-[; ;H628A.c: 186:             SPBRG = 51;
-[e = _SPBRG -> -> 51 `i `uc ]
+[; ;H628A.c: 186:     TXEN = 1;
+[e = _TXEN -> -> 1 `i `b ]
 "187
-[; ;H628A.c: 187:             break;
-[e $U 109  ]
+[; ;H628A.c: 187:     TXREG = 0x00;
+[e = _TXREG -> -> 0 `i `uc ]
 "188
-[; ;H628A.c: 188:         case 25:
-[e :U 113 ]
+[; ;H628A.c: 188:     RCREG = 0x00;
+[e = _RCREG -> -> 0 `i `uc ]
 "189
-[; ;H628A.c: 189:             SPBRG = 25;
-[e = _SPBRG -> -> 25 `i `uc ]
+[; ;H628A.c: 189:     switch(BaudRate)
+[e $U 110  ]
 "190
-[; ;H628A.c: 190:             break;
-[e $U 109  ]
+[; ;H628A.c: 190:     {
+{
 "191
-[; ;H628A.c: 191:         case 12:
-[e :U 114 ]
+[; ;H628A.c: 191:         case 207:
+[e :U 111 ]
 "192
-[; ;H628A.c: 192:             SPBRG = 12;
-[e = _SPBRG -> -> 12 `i `uc ]
+[; ;H628A.c: 192:             SPBRG = 207;
+[e = _SPBRG -> -> 207 `i `uc ]
 "193
 [; ;H628A.c: 193:             break;
 [e $U 109  ]
 "194
-[; ;H628A.c: 194:         case 8:
-[e :U 115 ]
+[; ;H628A.c: 194:         case 51:
+[e :U 112 ]
 "195
-[; ;H628A.c: 195:             SPBRG = 8;
-[e = _SPBRG -> -> 8 `i `uc ]
+[; ;H628A.c: 195:             SPBRG = 51;
+[e = _SPBRG -> -> 51 `i `uc ]
 "196
 [; ;H628A.c: 196:             break;
 [e $U 109  ]
 "197
-[; ;H628A.c: 197:         default:
-[e :U 116 ]
+[; ;H628A.c: 197:         case 25:
+[e :U 113 ]
 "198
-[; ;H628A.c: 198:             SPBRG = 51;
-[e = _SPBRG -> -> 51 `i `uc ]
+[; ;H628A.c: 198:             SPBRG = 25;
+[e = _SPBRG -> -> 25 `i `uc ]
 "199
 [; ;H628A.c: 199:             break;
 [e $U 109  ]
 "200
-[; ;H628A.c: 200:     }
+[; ;H628A.c: 200:         case 12:
+[e :U 114 ]
+"201
+[; ;H628A.c: 201:             SPBRG = 12;
+[e = _SPBRG -> -> 12 `i `uc ]
+"202
+[; ;H628A.c: 202:             break;
+[e $U 109  ]
+"203
+[; ;H628A.c: 203:         case 8:
+[e :U 115 ]
+"204
+[; ;H628A.c: 204:             SPBRG = 8;
+[e = _SPBRG -> -> 8 `i `uc ]
+"205
+[; ;H628A.c: 205:             break;
+[e $U 109  ]
+"206
+[; ;H628A.c: 206:         default:
+[e :U 116 ]
+"207
+[; ;H628A.c: 207:             SPBRG = 51;
+[e = _SPBRG -> -> 51 `i `uc ]
+"208
+[; ;H628A.c: 208:             break;
+[e $U 109  ]
+"209
+[; ;H628A.c: 209:     }
 }
 [e $U 109  ]
 [e :U 110 ]
@@ -925,294 +952,294 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ -> 8 `i 115
  116 ]
 [e :U 109 ]
-"201
-[; ;H628A.c: 201: }
+"210
+[; ;H628A.c: 210: }
 [e :UE 108 ]
 }
-"202
-[; ;H628A.c: 202: void SerialWrite(char data)
+"211
+[; ;H628A.c: 211: void SerialWrite(char data)
 [v _SerialWrite `(v ~T0 @X0 1 ef1`uc ]
-"203
-[; ;H628A.c: 203: {
+"212
+[; ;H628A.c: 212: {
 {
 [e :U _SerialWrite ]
-"202
-[; ;H628A.c: 202: void SerialWrite(char data)
+"211
+[; ;H628A.c: 211: void SerialWrite(char data)
 [v _data `uc ~T0 @X0 1 r1 ]
-"203
-[; ;H628A.c: 203: {
+"212
+[; ;H628A.c: 212: {
 [f ]
-"204
-[; ;H628A.c: 204:     while(!TXIF);
+"213
+[; ;H628A.c: 213:     while(!TXIF);
 [e $U 118  ]
 [e :U 119 ]
 [e :U 118 ]
 [e $ ! _TXIF 119  ]
 [e :U 120 ]
-"205
-[; ;H628A.c: 205:     TXREG = data;
+"214
+[; ;H628A.c: 214:     TXREG = data;
 [e = _TXREG -> _data `uc ]
-"206
-[; ;H628A.c: 206: }
+"215
+[; ;H628A.c: 215: }
 [e :UE 117 ]
 }
-"208
-[; ;H628A.c: 208: char SerialWriteText(char *dataText)
+"217
+[; ;H628A.c: 217: char SerialWriteText(char *dataText)
 [v _SerialWriteText `(uc ~T0 @X0 1 ef1`*uc ]
-"209
-[; ;H628A.c: 209: {
+"218
+[; ;H628A.c: 218: {
 {
 [e :U _SerialWriteText ]
-"208
-[; ;H628A.c: 208: char SerialWriteText(char *dataText)
+"217
+[; ;H628A.c: 217: char SerialWriteText(char *dataText)
 [v _dataText `*uc ~T0 @X0 1 r1 ]
-"209
-[; ;H628A.c: 209: {
+"218
+[; ;H628A.c: 218: {
 [f ]
-"210
-[; ;H628A.c: 210:     unsigned int i;
+"219
+[; ;H628A.c: 219:     unsigned int i;
 [v _i `ui ~T0 @X0 1 a ]
-"211
-[; ;H628A.c: 211:     for(i=0;dataText[i]!='\0';i++)
+"220
+[; ;H628A.c: 220:     for(i=0;dataText[i]!='\0';i++)
 {
 [e = _i -> -> 0 `i `ui ]
 [e $U 125  ]
 [e :U 122 ]
-"212
-[; ;H628A.c: 212:     {
+"221
+[; ;H628A.c: 221:     {
 {
-"213
-[; ;H628A.c: 213:        SerialWrite(dataText[i]);
+"222
+[; ;H628A.c: 222:        SerialWrite(dataText[i]);
 [e ( _SerialWrite (1 *U + _dataText * -> _i `ux -> -> # *U _dataText `ui `ux ]
-"214
-[; ;H628A.c: 214:     }
+"223
+[; ;H628A.c: 223:     }
 }
 [e ++ _i -> -> 1 `i `ui ]
 [e :U 125 ]
 [e $ != -> *U + _dataText * -> _i `ux -> -> # *U _dataText `ui `ux `ui -> 0 `ui 122  ]
 [e :U 123 ]
 }
-"215
-[; ;H628A.c: 215: }
+"224
+[; ;H628A.c: 224: }
 [e :UE 121 ]
 }
-"216
-[; ;H628A.c: 216: void SerialPrint(char *dataText)
+"225
+[; ;H628A.c: 225: void SerialPrint(char *dataText)
 [v _SerialPrint `(v ~T0 @X0 1 ef1`*uc ]
-"217
-[; ;H628A.c: 217: {
+"226
+[; ;H628A.c: 226: {
 {
 [e :U _SerialPrint ]
-"216
-[; ;H628A.c: 216: void SerialPrint(char *dataText)
+"225
+[; ;H628A.c: 225: void SerialPrint(char *dataText)
 [v _dataText `*uc ~T0 @X0 1 r1 ]
-"217
-[; ;H628A.c: 217: {
+"226
+[; ;H628A.c: 226: {
 [f ]
-"218
-[; ;H628A.c: 218:     for(unsigned int i=0;dataText[i]!='\0';i++)
+"227
+[; ;H628A.c: 227:     for(unsigned int i=0;dataText[i]!='\0';i++)
 {
 [v _i `ui ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `ui ]
 [e $U 130  ]
 [e :U 127 ]
-"219
-[; ;H628A.c: 219:     {
+"228
+[; ;H628A.c: 228:     {
 {
-"220
-[; ;H628A.c: 220:         SerialWrite(dataText[i]);
+"229
+[; ;H628A.c: 229:         SerialWrite(dataText[i]);
 [e ( _SerialWrite (1 *U + _dataText * -> _i `ux -> -> # *U _dataText `ui `ux ]
-"221
-[; ;H628A.c: 221:     }
+"230
+[; ;H628A.c: 230:     }
 }
 [e ++ _i -> -> 1 `i `ui ]
 [e :U 130 ]
 [e $ != -> *U + _dataText * -> _i `ux -> -> # *U _dataText `ui `ux `ui -> 0 `ui 127  ]
 [e :U 128 ]
 }
-"222
-[; ;H628A.c: 222: }
+"231
+[; ;H628A.c: 231: }
 [e :UE 126 ]
 }
-"223
-[; ;H628A.c: 223: void SerialPrintLn(char *dataText)
+"232
+[; ;H628A.c: 232: void SerialPrintLn(char *dataText)
 [v _SerialPrintLn `(v ~T0 @X0 1 ef1`*uc ]
-"224
-[; ;H628A.c: 224: {
+"233
+[; ;H628A.c: 233: {
 {
 [e :U _SerialPrintLn ]
-"223
-[; ;H628A.c: 223: void SerialPrintLn(char *dataText)
+"232
+[; ;H628A.c: 232: void SerialPrintLn(char *dataText)
 [v _dataText `*uc ~T0 @X0 1 r1 ]
-"224
-[; ;H628A.c: 224: {
+"233
+[; ;H628A.c: 233: {
 [f ]
-"225
-[; ;H628A.c: 225:     unsigned int i;
+"234
+[; ;H628A.c: 234:     unsigned int i;
 [v _i `ui ~T0 @X0 1 a ]
-"226
-[; ;H628A.c: 226:         for(i=0;dataText[i]!='\0';i++)
+"235
+[; ;H628A.c: 235:         for(i=0;dataText[i]!='\0';i++)
 {
 [e = _i -> -> 0 `i `ui ]
 [e $U 135  ]
 [e :U 132 ]
-"227
-[; ;H628A.c: 227:         {
+"236
+[; ;H628A.c: 236:         {
 {
-"228
-[; ;H628A.c: 228:             SerialWrite(dataText[i]);
+"237
+[; ;H628A.c: 237:             SerialWrite(dataText[i]);
 [e ( _SerialWrite (1 *U + _dataText * -> _i `ux -> -> # *U _dataText `ui `ux ]
-"229
-[; ;H628A.c: 229:         }
+"238
+[; ;H628A.c: 238:         }
 }
 [e ++ _i -> -> 1 `i `ui ]
 [e :U 135 ]
 [e $ != -> *U + _dataText * -> _i `ux -> -> # *U _dataText `ui `ux `ui -> 0 `ui 132  ]
 [e :U 133 ]
 }
-"230
-[; ;H628A.c: 230:         SerialWrite(0x0A);
+"239
+[; ;H628A.c: 239:         SerialWrite(0x0A);
 [e ( _SerialWrite (1 -> -> 10 `i `uc ]
-"231
-[; ;H628A.c: 231: }
+"240
+[; ;H628A.c: 240: }
 [e :UE 131 ]
 }
-"232
-[; ;H628A.c: 232: char SerialAvailable(void)
+"241
+[; ;H628A.c: 241: char SerialAvailable(void)
 [v _SerialAvailable `(uc ~T0 @X0 1 ef ]
-"233
-[; ;H628A.c: 233: {
+"242
+[; ;H628A.c: 242: {
 {
 [e :U _SerialAvailable ]
 [f ]
-"234
-[; ;H628A.c: 234:     return RCIF || (TXIF && TRMT);
+"243
+[; ;H628A.c: 243:     return RCIF || (TXIF && TRMT);
 [e ) -> -> || _RCIF && _TXIF _TRMT `i `uc ]
 [e $UE 136  ]
-"235
-[; ;H628A.c: 235: }
+"244
+[; ;H628A.c: 244: }
 [e :UE 136 ]
 }
-"237
-[; ;H628A.c: 237: char SerialRead(void)
+"246
+[; ;H628A.c: 246: char SerialRead(void)
 [v _SerialRead `(uc ~T0 @X0 1 ef ]
-"238
-[; ;H628A.c: 238: {
+"247
+[; ;H628A.c: 247: {
 {
 [e :U _SerialRead ]
 [f ]
-"239
-[; ;H628A.c: 239:     while(!RCIF);
+"248
+[; ;H628A.c: 248:     while(!RCIF);
 [e $U 138  ]
 [e :U 139 ]
 [e :U 138 ]
 [e $ ! _RCIF 139  ]
 [e :U 140 ]
-"240
-[; ;H628A.c: 240:     return RCREG;
+"249
+[; ;H628A.c: 249:     return RCREG;
 [e ) -> _RCREG `uc ]
 [e $UE 137  ]
-"241
-[; ;H628A.c: 241: }
+"250
+[; ;H628A.c: 250: }
 [e :UE 137 ]
 }
-"243
-[; ;H628A.c: 243: void SerialReadText(char *Output, unsigned int lenght)
+"252
+[; ;H628A.c: 252: void SerialReadText(char *Output, unsigned int lenght)
 [v _SerialReadText `(v ~T0 @X0 1 ef2`*uc`ui ]
-"244
-[; ;H628A.c: 244: {
+"253
+[; ;H628A.c: 253: {
 {
 [e :U _SerialReadText ]
-"243
-[; ;H628A.c: 243: void SerialReadText(char *Output, unsigned int lenght)
+"252
+[; ;H628A.c: 252: void SerialReadText(char *Output, unsigned int lenght)
 [v _Output `*uc ~T0 @X0 1 r1 ]
 [v _lenght `ui ~T0 @X0 1 r2 ]
-"244
-[; ;H628A.c: 244: {
+"253
+[; ;H628A.c: 253: {
 [f ]
-"245
-[; ;H628A.c: 245:     unsigned int i;
+"254
+[; ;H628A.c: 254:     unsigned int i;
 [v _i `ui ~T0 @X0 1 a ]
-"246
-[; ;H628A.c: 246:     for(i=0;i<lenght;i++)
+"255
+[; ;H628A.c: 255:     for(i=0;i<lenght;i++)
 {
 [e = _i -> -> 0 `i `ui ]
 [e $U 145  ]
 [e :U 142 ]
-"247
-[; ;H628A.c: 247:     {
+"256
+[; ;H628A.c: 256:     {
 {
-"248
-[; ;H628A.c: 248:         Output[i] = SerialRead();
+"257
+[; ;H628A.c: 257:         Output[i] = SerialRead();
 [e = *U + _Output * -> _i `ux -> -> # *U _Output `ui `ux ( _SerialRead ..  ]
-"249
-[; ;H628A.c: 249:     }
+"258
+[; ;H628A.c: 258:     }
 }
 [e ++ _i -> -> 1 `i `ui ]
 [e :U 145 ]
 [e $ < _i _lenght 142  ]
 [e :U 143 ]
 }
-"250
-[; ;H628A.c: 250: }
+"259
+[; ;H628A.c: 259: }
 [e :UE 141 ]
 }
-"252
-[; ;H628A.c: 252: void delay(unsigned int millis)
+"261
+[; ;H628A.c: 261: void delay(unsigned int millis)
 [v _delay `(v ~T0 @X0 1 ef1`ui ]
-"253
-[; ;H628A.c: 253: {
+"262
+[; ;H628A.c: 262: {
 {
 [e :U _delay ]
-"252
-[; ;H628A.c: 252: void delay(unsigned int millis)
+"261
+[; ;H628A.c: 261: void delay(unsigned int millis)
 [v _millis `ui ~T0 @X0 1 r1 ]
-"253
-[; ;H628A.c: 253: {
+"262
+[; ;H628A.c: 262: {
 [f ]
-"254
-[; ;H628A.c: 254:     for(char i=0;i!=200;i++)
+"263
+[; ;H628A.c: 263:     for(char i=0;i!=200;i++)
 {
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `uc ]
 [e $ != -> _i `i -> 200 `i 147  ]
 [e $U 148  ]
 [e :U 147 ]
-"255
-[; ;H628A.c: 255:     {
+"264
+[; ;H628A.c: 264:     {
 {
-"256
-[; ;H628A.c: 256:         __asm("NOP");
-[; <" NOP ;# ">
-"257
-[; ;H628A.c: 257:         __asm("NOP");
-[; <" NOP ;# ">
-"258
-[; ;H628A.c: 258:         __asm("NOP");
-[; <" NOP ;# ">
-"259
-[; ;H628A.c: 259:         __asm("NOP");
-[; <" NOP ;# ">
-"260
-[; ;H628A.c: 260:         __asm("NOP");
-[; <" NOP ;# ">
-"261
-[; ;H628A.c: 261:         __asm("NOP");
-[; <" NOP ;# ">
-"262
-[; ;H628A.c: 262:         __asm("NOP");
-[; <" NOP ;# ">
-"263
-[; ;H628A.c: 263:         __asm("NOP");
-[; <" NOP ;# ">
 "265
-[; ;H628A.c: 265:     }
+[; ;H628A.c: 265:         __asm("NOP");
+[; <" NOP ;# ">
+"266
+[; ;H628A.c: 266:         __asm("NOP");
+[; <" NOP ;# ">
+"267
+[; ;H628A.c: 267:         __asm("NOP");
+[; <" NOP ;# ">
+"268
+[; ;H628A.c: 268:         __asm("NOP");
+[; <" NOP ;# ">
+"269
+[; ;H628A.c: 269:         __asm("NOP");
+[; <" NOP ;# ">
+"270
+[; ;H628A.c: 270:         __asm("NOP");
+[; <" NOP ;# ">
+"271
+[; ;H628A.c: 271:         __asm("NOP");
+[; <" NOP ;# ">
+"272
+[; ;H628A.c: 272:         __asm("NOP");
+[; <" NOP ;# ">
+"274
+[; ;H628A.c: 274:     }
 }
 [e ++ _i -> -> 1 `i `uc ]
 [e $ != -> _i `i -> 200 `i 147  ]
 [e :U 148 ]
 }
-"266
-[; ;H628A.c: 266: }
+"275
+[; ;H628A.c: 275: }
 [e :UE 146 ]
 }
